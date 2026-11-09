@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>Danh sách sinh viên</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    table { border-collapse: collapse; width: 600px; }
+    th, td { border: 1px solid #999; padding: 8px 12px; text-align: left; }
+    th { background: #1f4e79; color: white; }
+    tr:nth-child(even) { background: #f2f2f2; }
+  </style>
+</head>
+<body>
+  <h2>Danh sách sinh viên</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>MSSV</th>
+      <th>Họ tên</th>
+      <th>GPA</th>
+    </tr>
+    {% for s in students %}
+    <tr>
+      <td>{{ s.id }}</td>
+      <td>{{ s.mssv }}</td>
+      <td>{{ s.name }}</td>
+      <td>{{ s.gpa }}</td>
+    </tr>
+    {% else %}
+    <tr><td colspan="4">Chưa có dữ liệu, hãy mở /them-mau trước.</td></tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
